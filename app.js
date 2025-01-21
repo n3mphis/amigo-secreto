@@ -7,20 +7,24 @@ function agregarAmigo() {
         alert('Por favor, ingrese un nombre!');
     } else {
         amigos.push(nombre);
-        limpiarLista();
         console.log(amigos);
+        recorrerArray(amigos);
+        limpiarLista();
     }
 }
 
 function limpiarLista() {
     document.querySelector('#amigo').value = '';
-}
+} 
 
-/* function recorrerArray(arr) {
-    const lista = document.getElementById('listaAmigos').value;
+function recorrerArray() {
+    const lista = document.getElementById('listaAmigos');
     lista.innerHTML = '';
 
     for (let i = 0; i < amigos.length; i++) {
-        lista.innerHTML = <li>amigos[i]</li>;
+        const li = document.createElement('li');
+        li.textContent = amigos[i];
+        lista.appendChild(li);
     }
-} */
+}
+
